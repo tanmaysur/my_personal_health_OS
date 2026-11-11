@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Outfit } from "next/font/google";
 
-import { AppShell } from "@/components/layout/app-shell";
-
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -34,9 +32,7 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${outfit.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col font-sans">
-        <AppShell>{children}</AppShell>
-      </body>
+      <body className="flex min-h-full flex-col font-sans">{children}</body>
     </html>
   );
 }

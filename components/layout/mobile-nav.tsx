@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
+import { LogoutButton } from "@/components/auth/logout-button";
 import { BrandMark } from "@/components/layout/sidebar";
 import { NAV_ICONS } from "@/components/layout/nav-icons";
 import { Button } from "@/components/ui/button";
@@ -96,7 +97,7 @@ export function MobileNav() {
               </Button>
             </div>
 
-            <nav className="flex flex-col gap-1 p-3" aria-label="Mobile">
+            <nav className="flex flex-1 flex-col gap-1 p-3" aria-label="Mobile">
               {NAV_ITEMS.map((item) => {
                 const Icon = NAV_ICONS[item.icon];
                 const active = isActivePath(pathname, item.href);
@@ -119,6 +120,10 @@ export function MobileNav() {
                 );
               })}
             </nav>
+
+            <div className="border-t border-sidebar-border p-4">
+              <LogoutButton className="w-full justify-start" />
+            </div>
           </div>
         </div>
       ) : null}

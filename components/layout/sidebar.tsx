@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { LogoutButton } from "@/components/auth/logout-button";
 import { NAV_ICONS } from "@/components/layout/nav-icons";
 import { cn } from "@/lib/utils";
 import { NAV_ITEMS } from "@/lib/navigation";
@@ -57,8 +58,9 @@ export function Sidebar() {
       </nav>
 
       <div className="border-t border-sidebar-border p-4">
-        <p className="text-xs text-muted-foreground">
-          Milestone 1 foundation · sample data only
+        <LogoutButton className="w-full justify-start" />
+        <p className="mt-3 text-xs text-muted-foreground">
+          Signed in · sample dashboard data
         </p>
       </div>
     </aside>
